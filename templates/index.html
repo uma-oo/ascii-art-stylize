@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ascii-Art</title>
   <link href="/assets/styles/index.css" rel="stylesheet">
 </head>
+
 <body>
 
   <main>
     <h1> ASCII-ART </h1>
     <div class="form_container">
-        <form action="/ascii-art" method="POST">
-          <div class="form-group">
-            <textarea  type="text" id="text" rows="10" cols="50" name="text" maxlength="1000" placeholder="Enter your text here">{{.Text}}</textarea>
+      <form action="/ascii-art" method="POST">
+        <div class="form-group">
+          <textarea type="text" id="text" rows="10" cols="50" name="text" maxlength="1000"
+            placeholder="Enter your text here">{{.Text}}</textarea>
+        </div>
+        <div class="form-group choice">
+          <div class="love">
+            <h3>Choose a style </h3>
+            <img class="luv" src="/assets/images/love.png" alt="love">
           </div>
-          <div class="form-group choice" >
-            <h3>CHOOSE A STYLE :)</h3>
-            <label for="standard">
-              <input type="radio" name="banner" value="standard" checked>
-              <span>STANDARD</span>
-              </label>
-            <label for="shadow">
-              <input type="radio" name="banner" value="shadow" {{if eq .Banner "shadow"}} checked {{end}} >
-              <span>SHADOW</span>
-            </label>
-            <label for="thinkertoy">
-              <input type="radio" name="banner" value="thinkertoy" {{if eq .Banner "thinkertoy"}} checked {{end}}>
-              <span>THINKERTOY</span>
-            </label>
-          </div>
-          <div class="form-group" >
-            <button type="submit">SUBMIT</button>
-            <div class="error">{{.FormError}}</div>
-          </div>
-        </form>
+
+          <label for="standard">
+            <input type="radio" name="banner" value="standard" checked id="standard">
+            <span>Standard</span>
+          </label>
+          <label for="shadow">
+            <input type="radio" name="banner" value="shadow" {{if eq .Banner "shadow" }} checked {{end}} id="shadow">
+            <span>Shadow</span>
+          </label>
+          <label for="thinkertoy">
+            <input type="radio" name="banner" value="thinkertoy" {{if eq .Banner "thinkertoy" }} checked {{end}} id="thinkertoy">
+            <span>Thinkertoy</span>
+          </label>
+        </div>
+        <div class="form-group">
+          <button type="submit">SUBMIT</button>
+          <div {{if ne .FormError "" }} class="disclaimer" {{end}}>{{.FormError}}</div>
+        </div>
+      </form>
     </div>
-        <br>
-        <hr>
-        <br>
+   
 
     <div class="ascii-art-container">
       <pre>{{.AsciiArt}}</pre>
-     
+
     </div>
   </main>
+  <footer>
+    <div>
+      <p>made with </p>
+      <img class="luv moving" src="/assets/images/love.png" alt="love">
+      <p>by </p>
+      <p><a>ooumayma</a> &</p>
+      <p><a href="https://github.com/idmossab" target="_blank">midbenke</a> &</p>
+      <p><a href="https://github.com/DarkMethoss" target="_blank">aayoubst</a></p>
+    </div>
+  </footer>
 
 </body>
+
 </html>

@@ -51,3 +51,9 @@ func extractFormData(w http.ResponseWriter, r *http.Request) string {
 func IsBanner(banner string) bool {
 	return banner == "standard" || banner == "shadow" || banner == "thinkertoy"
 }
+
+
+func CleanPath (path string) string {
+	c:=filepath.Clean()
+	return c
+}

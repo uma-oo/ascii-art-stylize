@@ -1,12 +1,15 @@
-* { 
-    padding:0;
+* {
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-    background-color: #F5F5F5;      
+    background-color: #F5F5F5;
+    height: max-content;
+    min-height: 100vh;
+    position: relative;
 }
 
 .form_container {
@@ -28,7 +31,7 @@ body {
     margin: auto;
 }
 
-.form-group > button {
+.form-group>button {
     font-size: 20px;
     color: #424242;
     border: 2px dotted #424242;
@@ -39,18 +42,23 @@ body {
     font-weight: bold;
     width: fit-content;
     padding: 5px;
+    padding-inline: 10px;
 }
 
-.choice  input{
-   text-align: left;
-   border: solid red;
+.choice input {
+    text-align: left;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
 }
 
 textarea {
     width: 100%;
     text-align: left;
     margin: auto;
-    height: 250px;
+    height: 200px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 10px solid #229799;
@@ -60,39 +68,51 @@ textarea {
     resize: none;
 }
 
-textarea:focus{
+textarea:focus {
     outline: none;
 }
 
-.form_container > form .form-group:last-child {
+.form_container>form .form-group:last-child {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /*nadya kadiir espace bla gap*/
+    justify-content: space-between;
+    /*nadya kadiir espace bla gap*/
     align-items: center;
     gap: 30px;
 
 }
 
-h1{
+h1 {
     width: max-content;
-    margin: 20px auto ;
-    color:#424242;
+    margin: auto;
+    color: #424242;
+    position: static;
+    padding-top: 20px;
+    align-content: center;
 }
 
 h3 {
     text-align: left;
     width: max-content;
-    color:#424242;
-    padding:  20px , 20px ;
+    color: #424242;
+    border: solid transparent;
+
 }
 
 span {
     font-weight: bold;
-    color:#424242;
+    color: #424242;
+    border: solid transparent;
+
+
 }
 
+span:hover {
+    color: #48CFCB;
 
-.error {
+}
+
+.disclaimer {
     font-size: 20px;
     color: #424242;
     border: 2px dotted #424242;
@@ -101,15 +121,135 @@ span {
     font-weight: bold;
     width: fit-content;
     padding: 5px;
-    height: fit-content;
-    
+    height: min-content;
+    padding-inline: 10px;
+
 }
 
 .ascii-art-container {
-    min-width: 60%;
-    width: 60%;
+    max-width: 60%;
+    width: max-content;
+    overflow-x:auto;
+    max-height: 180px;
+    overflow-y: auto;
+    /* if scroll is needed */
     
-    overflow: auto;/* if scroll is needed */
+    padding: auto;
     margin: auto;
+    margin-bottom: 20px;
 
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer>div {
+    width: max-content;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.luv {
+    width: 26px;
+    align-items: center;
+    border: solid transparent;
+
+
+}
+
+.luv {
+    animation: lov 2s infinite;
+}
+
+@keyframes lov {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+footer p {
+    align-items: center;
+
+    color: #424242;
+    font-weight: bold;
+    border: solid transparent;
+}
+
+
+.love {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+
+}
+
+
+a:hover {
+    color: #48CFCB;
+    cursor: pointer;
+
+}
+
+a {
+    all: unset;
+    text-decoration: underline;
+    color: #229799;
+
+
+}
+
+input[type=radio] {
+    appearance: inherit;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #424242;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+
+}
+
+input[type=radio]:checked {
+    background-color: #48CFCB;
+}
+
+label {
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    gap: 4px;
+}
+
+
+.error {
+    text-align: center;
+    width: max-content;
+    max-width: 60%;
+    margin: auto;
+}
+
+h3> .lien {
+    color: #229799;
+    text-align: center;
+    width: max-content;
+    max-width: 60%;
+    margin: auto;
 }

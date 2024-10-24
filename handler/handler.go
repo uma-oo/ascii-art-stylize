@@ -26,6 +26,10 @@ func HandleMainPage(w http.ResponseWriter, r *http.Request) {
 		renderTemplate(w, "errorPage.html", http.StatusNotFound)
 		return
 	}
+	if r.Method!= "GET" {
+		renderTemplate(w, "errorPage.html", http.StatusMethodNotAllowed)
+		return
+	}
 	renderTemplate(w, "index.html", Pagedata)
 	Pagedata = Data{}
 }
