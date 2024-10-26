@@ -53,7 +53,3 @@ func IsBanner(banner string) bool {
 }
 
 
-func CleanPath (path string) string {
-	c:=filepath.Clean()
-	return c
-}
